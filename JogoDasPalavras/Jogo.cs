@@ -124,10 +124,8 @@
 
         public string ObterFrase()
         {
-            if (Status == JogoStatus.NaoIniciou)
-                throw new InvalidOperationException("Você não iniciou o jogo");
-
-            if (Status == JogoStatus.Parou)
+            if (Status == JogoStatus.NaoIniciou
+                || Status == JogoStatus.Parou)
                 throw new InvalidOperationException("Você não iniciou o jogo");
 
             if (Status == JogoStatus.Jogando)
